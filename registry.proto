@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package discovery;
+
+service Registry {
+  rpc Deregister(DeregisterRequest) returns (DeregisterResponse) {}
+  rpc Get(GetRequest) returns (GetResponse) {}
+  rpc Register(RegisterRequest) returns (RegisterResponse) {}
+}
+
+message DeregisterRequest {
+  string name = 1;
+}
+
+message GetRequest {
+  bool success = 1;
+}
+
+message GetResponse {
+  string name = 1;
+}
+
+message DeregisterResponse {
+  bool success = 1;
+}
+
+message GrpcRegisterRequest {
+  int32 port = 1;
+  bool secure = 2;
+}
+
+message RegisterRequest {
+  string name = 1;
+  string address = 2;
+  int32 port = 3;
+  string healthCheck = 4;
+  string notes = 5;
+  bool secure = 6;
+  bool ttl = 7;
+  GrpcRegisterRequest grpc = 8;
+}
+
+message RegisterResponse {
+  bool success = 1;
+}
