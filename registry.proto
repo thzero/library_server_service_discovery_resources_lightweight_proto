@@ -9,19 +9,27 @@ service Registry {
 }
 
 message DeregisterRequest {
-  string name = 1;
-}
-
-message GetRequest {
-  bool success = 1;
-}
-
-message GetResponse {
-  string name = 1;
+  string correlationId = 1;
+  string name = 2;
 }
 
 message DeregisterResponse {
   bool success = 1;
+}
+
+message GetRequest {
+  string correlationId = 1;
+  string name = 2;
+}
+
+message GetResponse {
+  bool success = 1;
+}
+
+message DnsRegisterRequest {
+  string label = 1;
+  string namespace = 2;
+  bool local = 3;
 }
 
 message GrpcRegisterRequest {
@@ -30,13 +38,13 @@ message GrpcRegisterRequest {
 }
 
 message RegisterRequest {
-  string name = 1;
-  string address = 2;
-  int32 port = 3;
-  string healthCheck = 4;
-  string notes = 5;
+  string correlationId = 1;
+  string name = 2;
+  string address = 3;
+  int32 port = 4;
+  string healthCheck = 5;
   bool secure = 6;
-  bool ttl = 7;
+  DnsRegisterRequest dns = 7;
   GrpcRegisterRequest grpc = 8;
 }
 
