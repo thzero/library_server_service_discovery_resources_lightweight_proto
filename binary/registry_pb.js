@@ -220,8 +220,7 @@ proto.discovery.DeregisterRequest.prototype.toObject = function(opt_includeInsta
  */
 proto.discovery.DeregisterRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    correlationid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+    name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -260,10 +259,6 @@ proto.discovery.DeregisterRequest.deserializeBinaryFromReader = function(msg, re
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCorrelationid(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
     default:
@@ -295,17 +290,10 @@ proto.discovery.DeregisterRequest.prototype.serializeBinary = function() {
  */
 proto.discovery.DeregisterRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCorrelationid();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
   f = message.getName();
   if (f.length > 0) {
     writer.writeString(
-      2,
+      1,
       f
     );
   }
@@ -313,10 +301,10 @@ proto.discovery.DeregisterRequest.serializeBinaryToWriter = function(message, wr
 
 
 /**
- * optional string correlationId = 1;
+ * optional string name = 1;
  * @return {string}
  */
-proto.discovery.DeregisterRequest.prototype.getCorrelationid = function() {
+proto.discovery.DeregisterRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -325,26 +313,8 @@ proto.discovery.DeregisterRequest.prototype.getCorrelationid = function() {
  * @param {string} value
  * @return {!proto.discovery.DeregisterRequest} returns this
  */
-proto.discovery.DeregisterRequest.prototype.setCorrelationid = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string name = 2;
- * @return {string}
- */
-proto.discovery.DeregisterRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.discovery.DeregisterRequest} returns this
- */
 proto.discovery.DeregisterRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -510,8 +480,7 @@ proto.discovery.GetRequest.prototype.toObject = function(opt_includeInstance) {
  */
 proto.discovery.GetRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    correlationid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+    name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -550,10 +519,6 @@ proto.discovery.GetRequest.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCorrelationid(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
     default:
@@ -585,17 +550,10 @@ proto.discovery.GetRequest.prototype.serializeBinary = function() {
  */
 proto.discovery.GetRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCorrelationid();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
   f = message.getName();
   if (f.length > 0) {
     writer.writeString(
-      2,
+      1,
       f
     );
   }
@@ -603,10 +561,10 @@ proto.discovery.GetRequest.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string correlationId = 1;
+ * optional string name = 1;
  * @return {string}
  */
-proto.discovery.GetRequest.prototype.getCorrelationid = function() {
+proto.discovery.GetRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -615,26 +573,8 @@ proto.discovery.GetRequest.prototype.getCorrelationid = function() {
  * @param {string} value
  * @return {!proto.discovery.GetRequest} returns this
  */
-proto.discovery.GetRequest.prototype.setCorrelationid = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string name = 2;
- * @return {string}
- */
-proto.discovery.GetRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.discovery.GetRequest} returns this
- */
 proto.discovery.GetRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1150,12 +1090,11 @@ proto.discovery.RegisterRequest.prototype.toObject = function(opt_includeInstanc
  */
 proto.discovery.RegisterRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    correlationid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    address: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    port: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    healthcheck: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    secure: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    address: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    port: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    healthcheck: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    secure: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
     dns: (f = msg.getDns()) && proto.discovery.DnsRegisterRequest.toObject(includeInstance, f),
     grpc: (f = msg.getGrpc()) && proto.discovery.GrpcRegisterRequest.toObject(includeInstance, f)
   };
@@ -1196,34 +1135,30 @@ proto.discovery.RegisterRequest.deserializeBinaryFromReader = function(msg, read
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCorrelationid(value);
+      msg.setName(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
       msg.setAddress(value);
       break;
-    case 4:
+    case 3:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPort(value);
       break;
-    case 5:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setHealthcheck(value);
       break;
-    case 6:
+    case 5:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setSecure(value);
       break;
-    case 7:
+    case 6:
       var value = new proto.discovery.DnsRegisterRequest;
       reader.readMessage(value,proto.discovery.DnsRegisterRequest.deserializeBinaryFromReader);
       msg.setDns(value);
       break;
-    case 8:
+    case 7:
       var value = new proto.discovery.GrpcRegisterRequest;
       reader.readMessage(value,proto.discovery.GrpcRegisterRequest.deserializeBinaryFromReader);
       msg.setGrpc(value);
@@ -1257,52 +1192,45 @@ proto.discovery.RegisterRequest.prototype.serializeBinary = function() {
  */
 proto.discovery.RegisterRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCorrelationid();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getName();
+  f = message.getAddress();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getAddress();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
   f = message.getPort();
   if (f !== 0) {
     writer.writeInt32(
-      4,
+      3,
       f
     );
   }
   f = message.getHealthcheck();
   if (f.length > 0) {
     writer.writeString(
-      5,
+      4,
       f
     );
   }
   f = message.getSecure();
   if (f) {
     writer.writeBool(
-      6,
+      5,
       f
     );
   }
   f = message.getDns();
   if (f != null) {
     writer.writeMessage(
-      7,
+      6,
       f,
       proto.discovery.DnsRegisterRequest.serializeBinaryToWriter
     );
@@ -1310,7 +1238,7 @@ proto.discovery.RegisterRequest.serializeBinaryToWriter = function(message, writ
   f = message.getGrpc();
   if (f != null) {
     writer.writeMessage(
-      8,
+      7,
       f,
       proto.discovery.GrpcRegisterRequest.serializeBinaryToWriter
     );
@@ -1319,10 +1247,10 @@ proto.discovery.RegisterRequest.serializeBinaryToWriter = function(message, writ
 
 
 /**
- * optional string correlationId = 1;
+ * optional string name = 1;
  * @return {string}
  */
-proto.discovery.RegisterRequest.prototype.getCorrelationid = function() {
+proto.discovery.RegisterRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -1331,16 +1259,16 @@ proto.discovery.RegisterRequest.prototype.getCorrelationid = function() {
  * @param {string} value
  * @return {!proto.discovery.RegisterRequest} returns this
  */
-proto.discovery.RegisterRequest.prototype.setCorrelationid = function(value) {
+proto.discovery.RegisterRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string name = 2;
+ * optional string address = 2;
  * @return {string}
  */
-proto.discovery.RegisterRequest.prototype.getName = function() {
+proto.discovery.RegisterRequest.prototype.getAddress = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -1349,35 +1277,17 @@ proto.discovery.RegisterRequest.prototype.getName = function() {
  * @param {string} value
  * @return {!proto.discovery.RegisterRequest} returns this
  */
-proto.discovery.RegisterRequest.prototype.setName = function(value) {
+proto.discovery.RegisterRequest.prototype.setAddress = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string address = 3;
- * @return {string}
- */
-proto.discovery.RegisterRequest.prototype.getAddress = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.discovery.RegisterRequest} returns this
- */
-proto.discovery.RegisterRequest.prototype.setAddress = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional int32 port = 4;
+ * optional int32 port = 3;
  * @return {number}
  */
 proto.discovery.RegisterRequest.prototype.getPort = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
@@ -1386,16 +1296,16 @@ proto.discovery.RegisterRequest.prototype.getPort = function() {
  * @return {!proto.discovery.RegisterRequest} returns this
  */
 proto.discovery.RegisterRequest.prototype.setPort = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
 /**
- * optional string healthCheck = 5;
+ * optional string healthCheck = 4;
  * @return {string}
  */
 proto.discovery.RegisterRequest.prototype.getHealthcheck = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -1404,16 +1314,16 @@ proto.discovery.RegisterRequest.prototype.getHealthcheck = function() {
  * @return {!proto.discovery.RegisterRequest} returns this
  */
 proto.discovery.RegisterRequest.prototype.setHealthcheck = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional bool secure = 6;
+ * optional bool secure = 5;
  * @return {boolean}
  */
 proto.discovery.RegisterRequest.prototype.getSecure = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
 
@@ -1422,17 +1332,17 @@ proto.discovery.RegisterRequest.prototype.getSecure = function() {
  * @return {!proto.discovery.RegisterRequest} returns this
  */
 proto.discovery.RegisterRequest.prototype.setSecure = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 6, value);
+  return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
 
 /**
- * optional DnsRegisterRequest dns = 7;
+ * optional DnsRegisterRequest dns = 6;
  * @return {?proto.discovery.DnsRegisterRequest}
  */
 proto.discovery.RegisterRequest.prototype.getDns = function() {
   return /** @type{?proto.discovery.DnsRegisterRequest} */ (
-    jspb.Message.getWrapperField(this, proto.discovery.DnsRegisterRequest, 7));
+    jspb.Message.getWrapperField(this, proto.discovery.DnsRegisterRequest, 6));
 };
 
 
@@ -1441,7 +1351,7 @@ proto.discovery.RegisterRequest.prototype.getDns = function() {
  * @return {!proto.discovery.RegisterRequest} returns this
 */
 proto.discovery.RegisterRequest.prototype.setDns = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -1459,17 +1369,17 @@ proto.discovery.RegisterRequest.prototype.clearDns = function() {
  * @return {boolean}
  */
 proto.discovery.RegisterRequest.prototype.hasDns = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional GrpcRegisterRequest grpc = 8;
+ * optional GrpcRegisterRequest grpc = 7;
  * @return {?proto.discovery.GrpcRegisterRequest}
  */
 proto.discovery.RegisterRequest.prototype.getGrpc = function() {
   return /** @type{?proto.discovery.GrpcRegisterRequest} */ (
-    jspb.Message.getWrapperField(this, proto.discovery.GrpcRegisterRequest, 8));
+    jspb.Message.getWrapperField(this, proto.discovery.GrpcRegisterRequest, 7));
 };
 
 
@@ -1478,7 +1388,7 @@ proto.discovery.RegisterRequest.prototype.getGrpc = function() {
  * @return {!proto.discovery.RegisterRequest} returns this
 */
 proto.discovery.RegisterRequest.prototype.setGrpc = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -1496,7 +1406,7 @@ proto.discovery.RegisterRequest.prototype.clearGrpc = function() {
  * @return {boolean}
  */
 proto.discovery.RegisterRequest.prototype.hasGrpc = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
