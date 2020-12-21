@@ -40,6 +40,7 @@ message HealthcheckRegisterRequest {
   string healthCheck = 1;
   int32 interval = 2;
   bool enabled = 3;
+  string type = 4;
 }
 
 message RegisterRequest {

@@ -1144,7 +1144,8 @@ proto.discovery.HealthcheckRegisterRequest.toObject = function(includeInstance, 
   var f, obj = {
     healthcheck: jspb.Message.getFieldWithDefault(msg, 1, ""),
     interval: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    enabled: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+    enabled: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    type: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1193,6 +1194,10 @@ proto.discovery.HealthcheckRegisterRequest.deserializeBinaryFromReader = functio
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnabled(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setType(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1240,6 +1245,13 @@ proto.discovery.HealthcheckRegisterRequest.serializeBinaryToWriter = function(me
   if (f) {
     writer.writeBool(
       3,
+      f
+    );
+  }
+  f = message.getType();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -1297,6 +1309,24 @@ proto.discovery.HealthcheckRegisterRequest.prototype.getEnabled = function() {
  */
 proto.discovery.HealthcheckRegisterRequest.prototype.setEnabled = function(value) {
   return jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+/**
+ * optional string type = 4;
+ * @return {string}
+ */
+proto.discovery.HealthcheckRegisterRequest.prototype.getType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.discovery.HealthcheckRegisterRequest} returns this
+ */
+proto.discovery.HealthcheckRegisterRequest.prototype.setType = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
