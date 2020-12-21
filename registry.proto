@@ -33,11 +33,13 @@ message DnsRegisterRequest {
 message GrpcRegisterRequest {
   int32 port = 1;
   bool secure = 2;
+  bool enabled = 3;
 }
 
 message HealthcheckRegisterRequest {
   string healthCheck = 1;
   int32 interval = 2;
+  bool enabled = 3;
 }
 
 message RegisterRequest {
