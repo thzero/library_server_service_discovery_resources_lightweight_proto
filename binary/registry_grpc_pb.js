@@ -48,6 +48,28 @@ function deserialize_discovery_GetResponse(buffer_arg) {
   return registry_pb.GetResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_discovery_HealthCheckRequest(arg) {
+  if (!(arg instanceof registry_pb.HealthCheckRequest)) {
+    throw new Error('Expected argument of type discovery.HealthCheckRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_discovery_HealthCheckRequest(buffer_arg) {
+  return registry_pb.HealthCheckRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_discovery_HealthCheckResponse(arg) {
+  if (!(arg instanceof registry_pb.HealthCheckResponse)) {
+    throw new Error('Expected argument of type discovery.HealthCheckResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_discovery_HealthCheckResponse(buffer_arg) {
+  return registry_pb.HealthCheckResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_discovery_RegisterRequest(arg) {
   if (!(arg instanceof registry_pb.RegisterRequest)) {
     throw new Error('Expected argument of type discovery.RegisterRequest');
@@ -93,6 +115,17 @@ var RegistryService = exports.RegistryService = {
     requestDeserialize: deserialize_discovery_GetRequest,
     responseSerialize: serialize_discovery_GetResponse,
     responseDeserialize: deserialize_discovery_GetResponse,
+  },
+  healthCheck: {
+    path: '/discovery.Registry/HealthCheck',
+    requestStream: false,
+    responseStream: false,
+    requestType: registry_pb.HealthCheckRequest,
+    responseType: registry_pb.HealthCheckResponse,
+    requestSerialize: serialize_discovery_HealthCheckRequest,
+    requestDeserialize: deserialize_discovery_HealthCheckRequest,
+    responseSerialize: serialize_discovery_HealthCheckResponse,
+    responseDeserialize: deserialize_discovery_HealthCheckResponse,
   },
   register: {
     path: '/discovery.Registry/Register',

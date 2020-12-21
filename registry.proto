@@ -5,6 +5,7 @@ package discovery;
 service Registry {
   rpc Deregister(DeregisterRequest) returns (DeregisterResponse) {}
   rpc Get(GetRequest) returns (GetResponse) {}
+  rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {}
   rpc Register(RegisterRequest) returns (RegisterResponse) {}
 }
 
@@ -21,6 +22,13 @@ message GetRequest {
 }
 
 message GetResponse {
+  bool success = 1;
+}
+
+message HealthCheckRequest {
+}
+
+message HealthCheckResponse {
   bool success = 1;
 }
 
