@@ -35,11 +35,16 @@ message GrpcRegisterRequest {
   bool secure = 2;
 }
 
+message HealthcheckRegisterRequest {
+  string healthCheck = 1;
+  int32 interval = 2;
+}
+
 message RegisterRequest {
   string name = 1;
   string address = 2;
   int32 port = 3;
-  string healthCheck = 4;
+  HealthcheckRegisterRequest healthCheck = 4;
   bool secure = 5;
   DnsRegisterRequest dns = 6;
   GrpcRegisterRequest grpc = 7;
