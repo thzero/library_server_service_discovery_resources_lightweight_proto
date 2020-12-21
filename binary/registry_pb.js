@@ -953,7 +953,8 @@ proto.discovery.GrpcRegisterRequest.prototype.toObject = function(opt_includeIns
 proto.discovery.GrpcRegisterRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     port: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    secure: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+    secure: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+    enabled: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -998,6 +999,10 @@ proto.discovery.GrpcRegisterRequest.deserializeBinaryFromReader = function(msg, 
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setSecure(value);
       break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEnabled(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1041,6 +1046,13 @@ proto.discovery.GrpcRegisterRequest.serializeBinaryToWriter = function(message, 
       f
     );
   }
+  f = message.getEnabled();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -1080,6 +1092,24 @@ proto.discovery.GrpcRegisterRequest.prototype.setSecure = function(value) {
 };
 
 
+/**
+ * optional bool enabled = 3;
+ * @return {boolean}
+ */
+proto.discovery.GrpcRegisterRequest.prototype.getEnabled = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.discovery.GrpcRegisterRequest} returns this
+ */
+proto.discovery.GrpcRegisterRequest.prototype.setEnabled = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
 
 
 
@@ -1113,7 +1143,8 @@ proto.discovery.HealthcheckRegisterRequest.prototype.toObject = function(opt_inc
 proto.discovery.HealthcheckRegisterRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     healthcheck: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    interval: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    interval: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    enabled: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -1158,6 +1189,10 @@ proto.discovery.HealthcheckRegisterRequest.deserializeBinaryFromReader = functio
       var value = /** @type {number} */ (reader.readInt32());
       msg.setInterval(value);
       break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEnabled(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1201,6 +1236,13 @@ proto.discovery.HealthcheckRegisterRequest.serializeBinaryToWriter = function(me
       f
     );
   }
+  f = message.getEnabled();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -1237,6 +1279,24 @@ proto.discovery.HealthcheckRegisterRequest.prototype.getInterval = function() {
  */
 proto.discovery.HealthcheckRegisterRequest.prototype.setInterval = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional bool enabled = 3;
+ * @return {boolean}
+ */
+proto.discovery.HealthcheckRegisterRequest.prototype.getEnabled = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.discovery.HealthcheckRegisterRequest} returns this
+ */
+proto.discovery.HealthcheckRegisterRequest.prototype.setEnabled = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
