@@ -2,7 +2,7 @@
 
 'use strict';
 var grpc = require('@grpc/grpc-js');
-var registry_pb = require('./registry_pb.js');
+var registry_pb = require('./registry_pb.cjs');
 
 function serialize_discovery_DeregisterRequest(arg) {
   if (!(arg instanceof registry_pb.DeregisterRequest)) {
