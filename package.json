@@ -28,8 +28,5 @@
   "dependencies": {
     "@grpc/grpc-js": "^1.6.6",
     "google-protobuf": "^3.20.0"
-  },
-  "devDependencies": {
-    "@thzero/library_cli": "^0.15"
   }
 }
