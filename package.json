@@ -1,11 +1,11 @@
 {
   "name": "@thzero/library_server_service_discovery_resources_lightweight_proto",
   "type": "module",
-  "version": "0.15.27",
+  "version": "0.15.28",
   "version_major": 0,
   "version_minor": 15,
-  "version_patch": 27,
-  "version_date": "05/10/2023",
+  "version_patch": 28,
+  "version_date": "07/10/2023",
   "license": "MIT",
   "description": "",
   "author": "thZero",
@@ -25,7 +25,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@grpc/grpc-js": "^1.8.14",
+    "@grpc/grpc-js": "^1.8.17",
     "google-protobuf": "^3.21.2"
   }
 }
